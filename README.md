@@ -241,3 +241,24 @@ forge test --match-path test/qzpm/CTFTest.t.sol
 _**Note**: This challenge requires vyper compiler version `0.3.0`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 </details>
+
+### 6. [federicobianucci - SNAKE Presale](./challenges/src/federicobianucci-SNAKE-presale/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+SNAKE the vyper king is born!
+
+Buy `$SNAKE` tokens, the new `$DOGE` written in vyper! You can also refer your friends paying gas for them and get 5% of their purchase!
+
+100 ETH has been deposited in this contract. If there was only a way to get it out before the presale ends...
+
+_Access the test script [here](./challenges/test/federicobianucci-SNAKE-presale/SNAKEPresaleTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/federicobianucci-SNAKE-presale/SNAKEPresaleTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.7`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
