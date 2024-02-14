@@ -101,4 +101,6 @@ For flexibility purposes, the length of the pause is not fixed, although it is r
 
 Could you drain the Pomodoro contract's funds?
 
+_**Note**: This challenge requires vyper compiler version `0.3.9`. Make sure you have the appropriate virtual environment set up for compilation!_
+
 </details>
