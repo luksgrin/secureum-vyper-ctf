@@ -13,7 +13,7 @@ import {IPomodoroNFT} from "src/0xjarix-pomodoro/interfaces/IPomodoroNFT.sol";
 
 
 
-contract PomodoroeCTFTest is Test, PomodoroCTFDeployer {
+contract PomodoroCTFTest is Test, PomodoroCTFDeployer {
     IPomodoro public pomodoro;
     IPomodoroNFT public pomodoroNFT;
 
