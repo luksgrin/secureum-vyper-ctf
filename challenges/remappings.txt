@@ -1,0 +1,15 @@
+@openzeppelin/contracts/=lib/snekmate/lib/openzeppelin-contracts/contracts/
+create-util/=lib/snekmate/lib/create-util/contracts/
+ds-test/=lib/forge-std/lib/ds-test/src/
+erc4626-tests/=lib/snekmate/lib/erc4626-tests/
+forge-std/=lib/forge-std/src/
+murky/=lib/snekmate/lib/murky/
+openzeppelin-contracts/=lib/snekmate/lib/openzeppelin-contracts/
+openzeppelin/=lib/snekmate/lib/openzeppelin-contracts/contracts/
+prb-test/=lib/snekmate/lib/prb-test/src/
+prb/test/=lib/snekmate/lib/prb-test/src/
+snekmate/=lib/snekmate/src/
+solady/=lib/snekmate/lib/solady/
+solidity-bytes-utils/=lib/snekmate/lib/solidity-bytes-utils/contracts/
+solmate/=lib/snekmate/lib/solmate/src/
+snekmate-utils/=lib/snekmate/lib/utils/

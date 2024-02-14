@@ -82,7 +82,7 @@ After the competition, the challenges, writeups and solutions will be made publi
 
 ## Challenges
 
-### 1. [0xjarix - Pomodoro](./challenges/0xjarix-pomodoro/)
+### 1. [0xjarix - Pomodoro](./challenges/src/0xjarix-pomodoro/)
 
 <details>
 <summary><b>Challenge description</b></summary>
@@ -100,5 +100,237 @@ The NFT costs `0.1 ether`, and the reward is `1e12`.
 For flexibility purposes, the length of the pause is not fixed, although it is recommended that users spend exactly 5 minutes. The user can pause whenever they want for emergency purposes.
 
 Could you drain the Pomodoro contract's funds?
+
+_Access the test script [here](./challenges/test/0xjarix-pomodoro/PomodoroCTFTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/0xjarix-pomodoro/PomodoroCTFTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.9`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 2. [sakarkc2122 - DEX](./challenges/src/sakarkc2122-dex/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+There is a DEX contract written using the Vyper programming language. The contract `dex.vy` creates a dex for swapping two tokens. The contract `Tokens` creates the ERC20 token. For this CTF, when you deploy and get the contract instance:
+
+1. You get 100 T1 and 100 T2.
+2. The Dex contract gets 1000 T1 and 1000 T2. 
+
+Could you steal all T1 and T2 tokens from the Dex contract?
+
+_Access the test script [here](./challenges/test/sakarkc2122-dex/SakarDEXCTFTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/sakarkc2122-dex/SakarDEXCTFTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+
+### 3. [neumoxx - Succession CTF](./challenges/src/neumoxx-succession/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+```
+-----------------------------------------=----==----------------------------------------------
+---------------------------------==+=+*##%%%%%**%%%#*=----------------------------------------
+---------------------------------=%@@@@@@@@@@@@@@@@@@@@@%++==---------------------------------
+--------------------------------=*%@@@@@@@@@@@@@@@@@@@@@@@@@%#*#==----=-----------------------
+------------------------------=-+@@@@@@%%@@@@@@@@@@%%%%@@@@@@@@@@@@@#+------------------------
+-------------------------------=*@@%%%%%@@%@@@@@%%%@@%@%%@@@@@@@@@@@@%#=-=-----------=-=------
+----------------------------===*%%##%%%%@%@@@@@@@@@@@@@%%%@@@@@@@@@@@@@%+==-------------------
+-----------------------------=+#%%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*-=-------==---------
+---------------------------==#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#---=---------------
+---------------------------=+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#=---=----==-------
+------------------------==**%@@@@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@@@@@@@@#----=-=-====-----=
+-------------------------=+#%@@@@@@@@@@@@@@@@@@@%%@%%%%%%%@%@@@@@@@@@@@@@@%%------==------=--=
+-------------------------+%%%%%@@@@@@@@@@@@%@@%%%@%%%%%%%@@@@%%@@@@@@@@@@%%%%%%%%%%%%%##**++==
+-----------------------=-*%%@@@%%%%%%@@@@@@@@@@@@@%%%%%%%%@@%@@%%@@@@@@%@@%##%%%%%%%%%%%%%%%%%
+-----------------------==#%%%@@@@@%%@@@@@@@%%%%%%%%%#####%@@@@@#%%%%##%%%%%##%%%%%%%%%%%%%%%%%
+------------------------=*%%%@@@@@%@@@%%%%#%@@@@@%%%%%%%%%@@@@@%%%####+**#%%#%%%%%%%%%%%%%%%%%
+-------------------------+@@%%%%%%%##%@@@@@@#***#%%%%%%%%@%%%%%#@@@%%*++++*#%#%%%%%%%%%%%%%%%%
+-------------------------#%**#%#*+#%=++#***+****+*####%%%%%%#*#%*+++=++++=+*##%###############
+------------------------+**#**+===*#+----==+***##+****#%%%%%##*****-+=:-=+#+*##########%%#%%%%
+-------------------------=***=---=*%*=-:--:::-=+*****%%%%%%%%#%##*++-:--:-*%*######%%%%%%%%%%%
+--------------------------+::::--+%@%*+---=++==-=--==*#%%%%#%###*++-:-==-:=-*##%%%%%%%%%%%%%%%
+--------------------------=*****+%@%%#*++=++**#%%%%@%%%%%#****++==+-::--++--###%%%%%%%%%%%%%%%
+--------------------------+#****%@@%%###*****##%%%%%%%%#%#***++=++=+::--#+#+##############%%%%
+--------------------------*##**#%@@%%%##***#%%@%%%%###*#####***#*+==:+##==**###########*****##
+--------------------------+#**#%@@@@%%@%%+#%%@@@%#****#%%####%%%#**-####*#=+############******
+--------------------------=++*%####*****##%#%%%%%###%%%##%%#%%%%##=*%%%%*--=###############***
+---------------------------**%#+*++=:::=-=@%*#%#%%%%%%%%%%#%%%%%#*@%%%#+--++##################
+----------------------=-=-=##%%%*+=*#%@@@@@@%**#%############%%#*#*##*=--=*###****############
+-------------=++*=-=-------#%@@@%%%%@@@@@@@@@@@+**##%%#*+*####*+%+-:--+-.:*************#######
+----------#@@@@@@@@@@@@@@@@@@@@@@@+=+++*#%%%%@@@@*#%%%##*+***+=%#---=*=...:+**************####
+--------=@@@@@@@@@@@@@@@@@%@@@@@@@@+-++++==--=*%%%%%####***+=#%#---+*+...:::::+****+==++++==-:
+------:@@@@@@@@@@@@%#@@@@@%@@@@@@@@%+*#**+++++++*%%##***++=+%%#--=*+=::::::::::::-::::::::::::
+-----+@@@%*##@@@@%@%%%@@@@@#@@@%%%%#*+**+++****####*++=+=+#%%+-+=*@@::::::::::-:::::::::::::--
+----%@@@@%#+-=**%@%%++%@%%%*%@@%%%#=.-*%%%%@@@@@@%%*=+*++%%#===+*%%::::::::----::::::::::::---
+---@@@%%%#*=-::*#%%%*:#%%##-#@%#**+.:.:.:*%@@%%%@@%+=#**##===*+*@+:::::::-------::::::::::----
+-=@@%%%%#+===:--**++-.-*###:#%%#-:-+*++:...:-*%@%%%+#*++==+*++%@+:-::-:---------::::::::------
+%@@%%%*+++==--:=+++=::=#*+=.=%%#=-==+*#*##=:...:+*+++==+*%@@@@@=:--:---:-------.::::::--------
+@@%%+*+*+======+=+=--:-***=::-=====++***#*###%#=...-##@@@@@@@@%:----::------:.::::::----------
+%#+=.##*++=====#---==-==*=======++++++*+++***++=--#--@@@@@@@@%:-----------:.::-:::::-----::--:
+@#--=+++++=-=++============-:----==========--:::*#@@+=@@@@@@@-------------:::-:::---=-:::..:::
+%#*+--::==+++++++======--------::::::::#+:::::+%@@@@@:%@@@@@#-------------:::::::---:.....::..
+#**++*--:.===+=====-----------::::::-:=#+=:.=*=+@@@@@@.@@@@@:---------------:::::-:......:::..
+#**+++++-::::----------------:::::::::##:.-===+++=*@@@:*@@@----------------::::--:......::....
+*+++++===--::-:===-=-------::::::-:::.#=..=+=-::--...@@.@@*:---------:-----::::--:.....:::...:
+*+==---------::.:-==----------:::-::..#....::::---:....:@@:---------------.:::---......:...:-:
+**++++==------==:.:=-------------:::..*...-:-::::::..--+::---------------.::::-:::....::::::--
+**+++==------===---..-----------:::...+.:-:::..::::-==@@#---------------:::::-:::....::::::::-
+**++=-=-=---=====---:.:--------:::...-=:+:::...:::::@@@@---------------:::::---::....::...::--
++++=:.=------=--------:.------:::...=:--.:....::::*@@@@-:--------------:::-:--::.........::---
+=-:..==-------=--------:.:::::::...==:-+-=:::::-%#@@@@#:--------------:::::-::::.......:::--:-
+:::.------------=--=----:..::::...=+-:=:-:-::=@@@@@@@@---------------::::-----:::.....::::-::-
+```
+
+Henry senior has setup a meeting with his three children: Marion, Anna and Henry junior. About to retire after a very successful business activity throughout his life, he has decided to retire and divide his 30_000 shares of the company giving his kids 10_000 shares each. For this, 
+they just have to sign the document and receive their piece of the pie.
+
+But you (Henry Junior) have other plans. You wants everything. Will you be able to get the full 30_000 shares of the company?
+
+_Access the test script [here](./challenges/test/neumoxx-succession/SuccessionCTFTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/neumoxx-succession/SuccessionCTFTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.0`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 4. [eloi010 - Vexillology Challenge](./challenges/src/eloi010-vexillology/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+In the Vexillology Challenge, players strive to capture the flag of a specific country, showcasing their expertise in Vyper and tactical gameplay. Can you capture the flag of the country?
+
+_Access the test script [here](./challenges/test/eloi010-vexillology/VexillologyTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/eloi010-vexillology/VexillologyTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 5. [qpzm - CTF](./challenges/src/qzpm/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+...
+
+_Access the test script [here](./challenges/test/qzpm/CTFTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/qzpm/CTFTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.0`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 6. [federicobianucci - SNAKE Presale](./challenges/src/federicobianucci-SNAKE-presale/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+SNAKE the vyper king is born!
+
+Buy `$SNAKE` tokens, the new `$DOGE` written in vyper! You can also refer your friends paying gas for them and get 5% of their purchase!
+
+100 ETH has been deposited in this contract. If there was only a way to get it out before the presale ends...
+
+_Access the test script [here](./challenges/test/federicobianucci-SNAKE-presale/SNAKEPresaleTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/federicobianucci-SNAKE-presale/SNAKEPresaleTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.7`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 7. [Zac369 - ByteBrew](./challenges/src/zac369-byte-brew/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+"_In the cozy cafe, patrons gathered to savor the rich c0ffee aroma wafting through the air. 
+The menu boasted many delicious f00d options, from hearty breakfasts to savory lunches. 
+Among the favorites were succulent beef dishes that satisfied even the most discerning palates. 
+For those seeking lighter options, there was the popular decaf c0ffee, allowing patrons to unwind without the caffeine jolt. 
+As the evening approached, some customers decided to call it an evening and went to bed..._" X2
+
+_Access the test script [here](./challenges/test/zac369-byte-brew/ZacByteBrewTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/zac369-byte-brew/ZacByteBrewTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 8. [rotcivegaf - ArgentineBallot](./challenges/src/rotcivegaf-argentineballot/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+...
+
+_Access the test script [here](./challenges/test/rotcivegaf-argentineballot/BallotTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/rotcivegaf-argentineballot/BallotTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.7`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 9. [m4ttm - CrowdFund](./challenges/src/m4ttm-crowdfund/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+Crowdfund is a token which can be bought and sold at a fixed price directly on it's own contract.. But is it flawed?
+
+_Access the test script [here](./challenges/test/m4ttm-crowdfund/CrowdFundTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/m4ttm-crowdfund/CrowdFundTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.2.16`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 10. [romeroadrian - Vaulty](./challenges/src/romeroadrian-vaulty/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+A new Vyper Vault has been just deployed and Alice is about to ape into it with 15 ETH. Your snake sense has been triggered, bite fast and steal everything from the vault.
+
+_Access the test script [here](./challenges/test/romeroadrian-vaulty/VaultyTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/romeroadrian-vaulty/VaultyTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 </details>
