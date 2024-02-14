@@ -82,7 +82,7 @@ After the competition, the challenges, writeups and solutions will be made publi
 
 ## Challenges
 
-### 1. [0xjarix - Pomodoro](./challenges/0xjarix-pomodoro/)
+### 1. [0xjarix - Pomodoro](./challenges/src/0xjarix-pomodoro/)
 
 <details>
 <summary><b>Challenge description</b></summary>
@@ -100,5 +100,35 @@ The NFT costs `0.1 ether`, and the reward is `1e12`.
 For flexibility purposes, the length of the pause is not fixed, although it is recommended that users spend exactly 5 minutes. The user can pause whenever they want for emergency purposes.
 
 Could you drain the Pomodoro contract's funds?
+
+_Access the test script [here](./challenges/test/0xjarix-pomodoro/PomodoroCTFTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/0xjarix-pomodoro/PomodoroCTFTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.9`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
+### 2. [sakarkc2122 - DEX](./challenges/src/sakarkc2122-dex/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+There is a DEX contract written using the Vyper programming language. The contract `dex.vy` creates a dex for swapping two tokens. The contract `Tokens` creates the ERC20 token. For this CTF, when you deploy and get the contract instance:
+
+1. You get 100 T1 and 100 T2.
+2. The Dex contract gets 1000 T1 and 1000 T2. 
+
+Could you steal all T1 and T2 tokens from the Dex contract?
+
+_Access the test script [here](./challenges/test/sakarkc2122-dex/SakarDEXCTFTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/sakarkc2122-dex/SakarDEXCTFTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 </details>
