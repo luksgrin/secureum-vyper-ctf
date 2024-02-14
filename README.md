@@ -207,3 +207,20 @@ forge test --match-path test/neumoxx-succession/SuccessionCTFTest.t.sol
 _**Note**: This challenge requires vyper compiler version `0.3.0`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 </details>
+
+### 4. [eloi010 - Vexillology Challenge](./challenges/src/eloi010-vexillology/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+In the Vexillology Challenge, players strive to capture the flag of a specific country, showcasing their expertise in Vyper and tactical gameplay. Can you capture the flag of the country?
+
+_Access the test script [here](./challenges/test/eloi010-vexillology/VexillologyTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/eloi010-vexillology/VexillologyTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
