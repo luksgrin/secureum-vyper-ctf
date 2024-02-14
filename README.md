@@ -262,3 +262,25 @@ forge test --match-path test/federicobianucci-SNAKE-presale/SNAKEPresaleTest.t.s
 _**Note**: This challenge requires vyper compiler version `0.3.7`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 </details>
+
+### 7. []()
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+"_In the cozy cafe, patrons gathered to savor the rich c0ffee aroma wafting through the air. 
+The menu boasted many delicious f00d options, from hearty breakfasts to savory lunches. 
+Among the favorites were succulent beef dishes that satisfied even the most discerning palates. 
+For those seeking lighter options, there was the popular decaf c0ffee, allowing patrons to unwind without the caffeine jolt. 
+As the evening approached, some customers decided to call it an evening and went to bed..._" X2
+
+_Access the test script [here](./challenges/test/federicobianucci-SNAKE-presale/SNAKEPresaleTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/federicobianucci-SNAKE-presale/SNAKEPresaleTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
