@@ -1,6 +1,8 @@
 [profile.default]
 src = "src"
 out = "out"
+ffi = true
 libs = ["lib"]
+evm_version = "shanghai"
 
 # See more config options https://github.com/foundry-rs/foundry/tree/master/crates/config
