@@ -224,3 +224,20 @@ forge test --match-path test/eloi010-vexillology/VexillologyTest.t.sol
 _**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 </details>
+
+### 5. [qpzm - CTF](./challenges/src/qzpm/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+...
+
+_Access the test script [here](./challenges/test/qzpm/CTFTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/qzpm/CTFTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.0`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
