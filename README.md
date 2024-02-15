@@ -317,3 +317,17 @@ forge test --match-path test/m4ttm-crowdfund/CrowdFundTest.t.sol
 _**Note**: This challenge requires vyper compiler version `0.2.16`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 
+### 10. [romeroadrian - Vaulty](./challenges/src/romeroadrian-vaulty/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+A new Vyper Vault has been just deployed and Alice is about to ape into it with 15 ETH. Your snake sense has been triggered, bite fast and steal everything from the vault.
+
+_Access the test script [here](./challenges/test/romeroadrian-vaulty/VaultyTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/romeroadrian-vaulty/VaultyTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.2.16`. Make sure you have the appropriate virtual environment set up for compilation!_
