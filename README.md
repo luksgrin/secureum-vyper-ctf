@@ -301,3 +301,19 @@ _**Note**: This challenge requires vyper compiler version `0.3.7`. Make sure you
 
 </details>
 
+### 9. [m4ttm - CrowdFund](./challenges/src/m4ttm-crowdfund/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+Crowdfund is a token which can be bought and sold at a fixed price directly on it's own contract.. But is it flawed?
+
+_Access the test script [here](./challenges/test/m4ttm-crowdfund/CrowdFundTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/m4ttm-crowdfund/CrowdFundTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.2.16`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+
