@@ -316,6 +316,7 @@ forge test --match-path test/m4ttm-crowdfund/CrowdFundTest.t.sol
 
 _**Note**: This challenge requires vyper compiler version `0.2.16`. Make sure you have the appropriate virtual environment set up for compilation!_
 
+</details>
 
 ### 10. [romeroadrian - Vaulty](./challenges/src/romeroadrian-vaulty/)
 
@@ -330,4 +331,6 @@ _Access the test script [here](./challenges/test/romeroadrian-vaulty/VaultyTest.
 forge test --match-path test/romeroadrian-vaulty/VaultyTest.t.sol
 ```
 
-_**Note**: This challenge requires vyper compiler version `0.2.16`. Make sure you have the appropriate virtual environment set up for compilation!_
+_**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
