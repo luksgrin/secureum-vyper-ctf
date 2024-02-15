@@ -283,3 +283,21 @@ forge test --match-path test/zac369-byte-brew/ZacByteBrewTest.t.sol
 _**Note**: This challenge requires vyper compiler version `0.3.10`. Make sure you have the appropriate virtual environment set up for compilation!_
 
 </details>
+
+### 8. [rotcivegaf - ArgentineBallot](./challenges/src/rotcivegaf-argentineballot/)
+
+<details>
+<summary><b>Challenge description</b></summary>
+
+...
+
+_Access the test script [here](./challenges/test/rotcivegaf-argentineballot/BallotTest.t.sol). Remember, to run this script you must execute:_
+
+```bash 
+forge test --match-path test/rotcivegaf-argentineballot/BallotTest.t.sol
+```
+
+_**Note**: This challenge requires vyper compiler version `0.3.7`. Make sure you have the appropriate virtual environment set up for compilation!_
+
+</details>
+
