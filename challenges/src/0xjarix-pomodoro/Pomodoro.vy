@@ -86,3 +86,8 @@ def claimReward(_tokenId: uint256):
     # Reset or adjust session details based on remaining time
     self.remainingTime = totalSessionTime % self.sessionDuration
     self.sessions[msg.sender].ongoing = False
+
+@external
+@view
+def isSolved() -> bool:
+    return self.balance == 0
