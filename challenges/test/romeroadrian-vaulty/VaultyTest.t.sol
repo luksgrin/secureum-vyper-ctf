@@ -17,7 +17,7 @@ contract VaultyTest is Test, VaultyDeployer {
 
     address player = address(420);
 
-    address vaultyowner = makeAddr("Alice");
+    address vaultyowner = makeAddr("owner");
     address alice = makeAddr("Alice");
 
     /// @notice Deploy the ExampleCTF and the solution contract
@@ -26,17 +26,11 @@ contract VaultyTest is Test, VaultyDeployer {
         VaultyDeployer.setUp();
 
         vm.deal(alice, 15 ether);
+        vm.deal(player, 20 ether);
 
         vm.startPrank(vaultyowner);
         vaulty = IVaulty(deployVaulty());
         vm.stopPrank();
-
-        vm.startPrank(alice);
-        vaulty.deposit{value: 15 ether}();
-        vm.stopPrank();
-
-        vm.startPrank(player);
-
     }
 
     /// @notice Test that the ExampleCTF is unsolved if we don't do anything
@@ -46,9 +40,21 @@ contract VaultyTest is Test, VaultyDeployer {
 
     /// @notice Test that the ExampleCTF is solved if we call the solve function
     function test_vaultySolved() external {
+        vm.startPrank(player);
         /*//////////////////////////////////////
         //     Write your solution here       //
         //////////////////////////////////////*/
+        vm.stopPrank();
+
+        vm.startPrank(alice);
+        vaulty.deposit{value: 15 ether}();
+        vm.stopPrank();
+
+        vm.startPrank(player);
+        /*//////////////////////////////////////
+        //     Write your solution here       //
+        //////////////////////////////////////*/
+        vm.stopPrank();
 
         assertTrue(vaulty.isSolved());
     }
