@@ -35,7 +35,7 @@ contract BallotTest is Test, ArgentineBallotDeployer {
         laws[0].initialize();
         laws[1] = ILaw(deployLaw());
         laws[1].initialize();
-        laws[2] = ILaw(deployLaw());
+        laws[2] = ILaw(deployProposeLaw());
         laws[2].initialize();
 
         ballot = IBallot(deployArgentineBallot());
