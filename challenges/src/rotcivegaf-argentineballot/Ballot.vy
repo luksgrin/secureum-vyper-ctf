@@ -81,7 +81,7 @@ startMessage : String[21]
 
 @external
 def initialize(laws: DynArray[ILaw, 3]):
-    assert self.owner == 0x0000000000000000000000000000000000000000, "INITIALIZE"
+    assert self.owner == empty(address), "INITIALIZE"
     self.startMessage = "I don\'t want you dust"
     self.owner = msg.sender
     self._mint(msg.sender, 240)

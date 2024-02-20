@@ -10,4 +10,5 @@ president: public(address)
 
 @external
 def initialize():
+    assert self.president == empty(address), "INITIALIZE"
     self.president = msg.sender
