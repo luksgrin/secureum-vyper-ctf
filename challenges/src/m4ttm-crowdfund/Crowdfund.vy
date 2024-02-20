@@ -33,9 +33,10 @@ totalSupply: public(uint256)
 balances: HashMap[address, uint256]
 allowances: HashMap[address, HashMap[address, uint256]]
 
-
 @external
-def __init__():
+def initialize():
+    assert self.owner == empty(address), "INITIALIZE"
+
     self.name = 'Token'
     self.symbol = 'TKN'
     self.decimals = 18

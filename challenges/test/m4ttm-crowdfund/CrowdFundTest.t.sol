@@ -32,6 +32,7 @@ contract CrowdfundTest is Test, CrowdFundDeployer {
 
         vm.startPrank(player);
         crowdfund = ICrowdFund(deployCrowdFund());
+        crowdfund.initialize();
         vm.stopPrank();
 
         // 5 Accounts Buy 0.1 Ether
