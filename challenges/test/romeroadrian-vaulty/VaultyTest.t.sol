@@ -35,6 +35,10 @@ contract VaultyTest is Test, VaultyDeployer {
 
     /// @notice Test that the ExampleCTF is unsolved if we don't do anything
     function test_vaultyUnsolved() external {
+        vm.startPrank(alice);
+        vaulty.deposit{value: 15 ether}();
+        vm.stopPrank();
+
         assertFalse(vaulty.isSolved());
     }
 
