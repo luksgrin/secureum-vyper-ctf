@@ -12,15 +12,16 @@ contract CrowdFundDeployer is Script {
         vyperDeployer = new VyperDeployer();
     }
 
-    function deployCrowdFund() public returns(address) {
+    function deployCrowdFund(address _owner) public returns(address) {
         return vyperDeployer.deployContract(
             "src/m4ttm-crowdfund/",
-            "Crowdfund"
+            "Crowdfund",
+            abi.encode(_owner)
         );
     }
 
     function run() public returns(address) {
         vm.broadcast();
-        return deployCrowdFund();
+        return deployCrowdFund(msg.sender);
     }
 }

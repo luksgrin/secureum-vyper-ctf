@@ -34,13 +34,11 @@ balances: HashMap[address, uint256]
 allowances: HashMap[address, HashMap[address, uint256]]
 
 @external
-def initialize():
-    assert self.owner == empty(address), "INITIALIZE"
-
+def __init__(_owner : address):
     self.name = 'Token'
     self.symbol = 'TKN'
     self.decimals = 18
-    self.owner = msg.sender
+    self.owner = _owner
 
 @external
 @view
