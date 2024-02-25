@@ -2,6 +2,9 @@
 src = "src"
 out = "out"
 ffi = true
+fs_permissions = [
+    { access = "read", path = "./src/federicobianucci-SNAKE-presale"}
+]
 libs = ["lib"]
 evm_version = "shanghai"
 
