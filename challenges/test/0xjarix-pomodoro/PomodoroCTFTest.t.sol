@@ -27,19 +27,23 @@ contract PomodoroCTFTest is Test, PomodoroCTFDeployer {
         pomodoro.setPomodoroNFTAddress(address(pomodoroNFT));
         address user1 = makeAddr("USER1");
         vm.deal(user1, 1e17);
-        (bool succ, ) = user1.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user1));
+        vm.prank(user1);
+        (bool succ, ) = address(pomodoroNFT).call{value: 1e17}(abi.encodeWithSignature("mint(address)", user1));
         require(succ, "mint failed");
         address user2 = makeAddr("USER2");
         vm.deal(user2, 1e17);
-        (succ, ) = user2.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user2));
+        vm.prank(user2);
+        (succ, ) = address(pomodoroNFT).call{value: 1e17}(abi.encodeWithSignature("mint(address)", user2));
         require(succ, "mint failed");
         address user3 = makeAddr("USER3");
         vm.deal(user3, 1e17);
-        (succ, ) = user3.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user3));
+        vm.prank(user3);
+        (succ, ) = address(pomodoroNFT).call{value: 1e17}(abi.encodeWithSignature("mint(address)", user3));
         require(succ, "mint failed");
         address user4 = makeAddr("USER4");
         vm.deal(user4, 1e17);
-        (succ, ) = user4.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user4));
+        vm.prank(user4);
+        (succ, ) = address(pomodoroNFT).call{value: 1e17}(abi.encodeWithSignature("mint(address)", user4));
         require(succ, "mint failed");
     }
 
@@ -56,7 +60,7 @@ contract PomodoroCTFTest is Test, PomodoroCTFDeployer {
         /*//////////////////////////////////////
         //     Write your solution here       //
         //////////////////////////////////////*/
-        console2.log("pomodoro balance", address(pomodoro).balance);
         assertTrue(pomodoro.isSolved());
     }
 }
+
