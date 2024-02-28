@@ -13,14 +13,14 @@ contract PomodoroCTFDeployer is Script {
     }
 
     function deployPomodoroCTF() public returns(address pomodoroNFT, address pomodoro) {
-        pomodoroNFT = vyperDeployer.deployContract(
-            "src/0xjarix-pomodoro/",
-            "PomodoroNFT"
-        );
         pomodoro = vyperDeployer.deployContract(
             "src/0xjarix-pomodoro/",
-            "Pomodoro",
-            abi.encode(pomodoroNFT)
+            "Pomodoro"
+        );
+        pomodoroNFT = vyperDeployer.deployContract(
+            "src/0xjarix-pomodoro/",
+            "PomodoroNFT",
+            abi.encode(pomodoro)
         );
     }
 

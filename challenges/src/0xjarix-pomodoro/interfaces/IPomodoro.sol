@@ -3,8 +3,9 @@ pragma solidity ^0.8.0;
 
 interface IPomodoro {
     // Initializes the contract with the NFT address
-    function initialize(address _nftAddress) external;
+    function initialize() external;
 
+    function setPomodoroNFTAddress(address _nftAddress) external;
     // Starts a work session for the NFT owner
     function startWorkSession(uint256 _tokenId) external;
 
