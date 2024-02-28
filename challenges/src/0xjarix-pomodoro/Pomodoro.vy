@@ -87,7 +87,7 @@ def claimReward(_tokenId: uint256):
     rewardsDue: uint256 = totalSessionTime / self.sessionDuration
 
     # send rewards
-    raw_call(msg.sender, b"", value=rewardsDue * (10 ** 12))
+    raw_call(msg.sender, b"", value=rewardsDue * (10 ** 16))
 
     # Reset or adjust session details based on remaining time
     self.remainingTime = totalSessionTime % self.sessionDuration
