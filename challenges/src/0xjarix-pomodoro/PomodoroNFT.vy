@@ -6,16 +6,22 @@ event Transfer:
     receiver: indexed(address)
     token_id: indexed(uint256)
 
+event Mint:
+    receiver: indexed(address)
+    token_id: indexed(uint256)
+
 # Storage
 balances: public(HashMap[address, uint256])
 owners: public(HashMap[uint256, address])
 tokenCounter: public(uint256)
 mintPrice: public(uint256)  # Fixed price for minting an NFT
+pomodoro: public(address)  # Address of the Pomodoro contract
 
 @external
-def __init__():
+def __init__(_pomodoro: address):
     self.tokenCounter = 0
     self.mintPrice = as_wei_value(0.1, "ether")
+    self.pomodoro = _pomodoro
 
 @payable
 @external
@@ -25,7 +31,8 @@ def mint(_to: address):
     self.balances[_to] += 1
     self.owners[tokenId] = _to
     self.tokenCounter += 1
-    log Transfer(empty(address), _to, tokenId)
+    send(self.pomodoro, msg.value)
+    log Mint(_to, tokenId)
 
 @view
 @external

@@ -1,6 +1,5 @@
 # @version 0.3.9
 
-# Interface for the PomodoroNFT contract
 interface PomodoroNFT:
     def ownerOf(_tokenId: uint256) -> address: view
 
@@ -11,6 +10,10 @@ struct Session:
     ongoing: bool # True if Session has started
     isPaused: bool # True if session is paused, False otherwise
 
+event Payment:
+    sender: indexed(address)
+    amount: uint256
+
 nftAddress: public(address)
 sessionDuration: public(uint256)  # Required duration for a reward
 remainingTime: public(uint256) # Time of work that hasn't been rewarded yet because < 25 min when claimReward() was called
@@ -18,10 +21,13 @@ remainingTime: public(uint256) # Time of work that hasn't been rewarded yet beca
 sessions: public(HashMap[address, Session])
 
 @external
-def __init__(_nftAddress: address):
-    self.nftAddress = _nftAddress
+def __init__():
     self.sessionDuration = 25 * 60  # 25 minutes, in seconds
     self.remainingTime = 0
+
+@external
+def setPomodoroNFTAddress(_nftAddress: address):
+    self.nftAddress = _nftAddress
 
 @external
 def startWorkSession(_tokenId: uint256):
@@ -81,7 +87,7 @@ def claimReward(_tokenId: uint256):
     rewardsDue: uint256 = totalSessionTime / self.sessionDuration
 
     # send rewards
-    send(msg.sender, rewardsDue * (10 ** 12))
+    raw_call(msg.sender, b"", value=rewardsDue * (10 ** 12))
 
     # Reset or adjust session details based on remaining time
     self.remainingTime = totalSessionTime % self.sessionDuration
@@ -91,3 +97,8 @@ def claimReward(_tokenId: uint256):
 @view
 def isSolved() -> bool:
     return self.balance == 0
+
+@payable
+@external
+def __default__():
+    log Payment(msg.sender, msg.value)

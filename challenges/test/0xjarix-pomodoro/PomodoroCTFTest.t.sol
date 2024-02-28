@@ -11,8 +11,6 @@ import {IPomodoroNFT} from "src/0xjarix-pomodoro/interfaces/IPomodoroNFT.sol";
 //             (if you need any)               //
 ///////////////////////////////////////////////*/
 
-
-
 contract PomodoroCTFTest is Test, PomodoroCTFDeployer {
     IPomodoro public pomodoro;
     IPomodoroNFT public pomodoroNFT;
@@ -26,9 +24,23 @@ contract PomodoroCTFTest is Test, PomodoroCTFDeployer {
 
         pomodoro = IPomodoro(_pomodoro);
         pomodoroNFT = IPomodoroNFT(_pomodoroNFT);
-
-        vm.deal(address(pomodoro), 1000000 ether);
-
+        pomodoro.setPomodoroNFTAddress(address(pomodoroNFT));
+        address user1 = makeAddr("USER1");
+        vm.deal(user1, 1e17);
+        (bool succ, ) = user1.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user1));
+        require(succ, "mint failed");
+        address user2 = makeAddr("USER2");
+        vm.deal(user2, 1e17);
+        (succ, ) = user2.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user2));
+        require(succ, "mint failed");
+        address user3 = makeAddr("USER3");
+        vm.deal(user3, 1e17);
+        (succ, ) = user3.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user3));
+        require(succ, "mint failed");
+        address user4 = makeAddr("USER4");
+        vm.deal(user4, 1e17);
+        (succ, ) = user4.call{value: 1e17}(abi.encodeWithSignature("mint(address)", user4));
+        require(succ, "mint failed");
     }
 
     /// @notice Test that the ExampleCTF is unsolved if we don't do anything
@@ -38,10 +50,13 @@ contract PomodoroCTFTest is Test, PomodoroCTFDeployer {
 
     /// @notice Test that the ExampleCTF is solved if we call the solve function
     function test_pomodoroSolved() external {
+        // attacker starts with 1e17 and can't deal ETH anymore
+        address attacker = makeAddr("ATTACKER");
+        vm.deal(attacker, 1e17);
         /*//////////////////////////////////////
         //     Write your solution here       //
         //////////////////////////////////////*/
-
+        console2.log("pomodoro balance", address(pomodoro).balance);
         assertTrue(pomodoro.isSolved());
     }
 }
