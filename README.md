@@ -93,9 +93,9 @@ Get your **PomodoroNFT** so you're eligible for rewards on the Pomodoro DApp.
 
 You might have heard of the "_Pomodoro Technique_" if you're all about being productive in your work, nonetheless here's a quick explanation:
 
-Usually people work for 5 hours straight, lose efficiency as time goes on due to lack of focus, and get 1 hour of rest afterwards. The Pomodoro technique consists of highly efficient working shifts of 25 minutes followed by 5 minutes of rest as people find it difficult to focus for more than 25 minutes. The Pomodoro DApp incentivizes the use of the Pomodoro technique by awarding users with some ETH provided they own a PomodoroNFT. For every 25 minute of work, the user receives 0.000001 ETH.
+Usually people work for 5 hours straight, lose efficiency as time goes on due to lack of focus, and get 1 hour of rest afterwards. The Pomodoro technique consists of highly efficient working shifts of 25 minutes followed by 5 minutes of rest as people find it difficult to focus for more than 25 minutes. The Pomodoro DApp incentivizes the use of the Pomodoro technique by awarding users with some ETH provided they own a PomodoroNFT. For every 25 minute of work, the user receives 0.01 ETH.
 
-The NFT costs `0.1 ether`, and the reward is `1e12`.
+The NFT costs `0.1 ether`, and the reward is `0.01 ether`.
 
 For flexibility purposes, the length of the pause is not fixed, although it is recommended that users spend exactly 5 minutes. The user can pause whenever they want for emergency purposes.
 
